@@ -3,4 +3,7 @@
 
     <string name="hello_world">Hello World!</string>
     <string name="action_settings">Settings</string>
+    <string name="button_hello">Поздороваться</string>
+    <string name="button_crows_counter">Считаем ворон</string>
+    <string name="button_cats_counter">Считаем котов</string>
 </resources>

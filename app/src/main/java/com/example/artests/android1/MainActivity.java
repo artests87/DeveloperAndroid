@@ -5,19 +5,40 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mHelloTextView;
-    private EditText mNameEditText;
+
+    private Button mCrowsCounterButton;
+    private Button mCatsCounterButton;
+    private int mCountCrows;
+    private int mCountCats;
+    private TextView mInfoTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mHelloTextView=(TextView)findViewById(R.id.textView);
-        mNameEditText=(EditText)findViewById(R.id.editText);
+
+        mCrowsCounterButton=(Button)findViewById(R.id.buttonCrowsCounter);
+        mCatsCounterButton=(Button)findViewById(R.id.buttonCatsCounter);
+        mInfoTextView=(TextView)findViewById(R.id.textView);
+        mCrowsCounterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mInfoTextView.setText("Я насчитал " + ++mCountCrows + " ворон");
+            }
+        });
+        mCatsCounterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mInfoTextView.setText("Я насчитал " + ++mCountCats + " котов");
+            }
+        });
+
     }
 
     @Override
@@ -43,11 +64,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        if (mNameEditText.length()==0) {
-            mHelloTextView.setText("Hello Kitty!");
-        }
-        else{
-            mHelloTextView.setText("Привет, "+mNameEditText.getText());
-        }
+        mInfoTextView.setText("Hello, " + ((EditText)findViewById(R.id.editText)).getText());
     }
+
+
 }

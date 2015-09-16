@@ -6,7 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
     android:background="@color/background_color">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+    <TextView  android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:layout_below="@+id/imageButton"
@@ -29,4 +29,39 @@
         android:layout_centerHorizontal="true"
         android:hint="Введите имя кота" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_hello"
+        android:id="@+id/buttonHello"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_marginTop="54dp"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_crows_counter"
+        android:id="@+id/buttonCrowsCounter"
+        android:textSize="8dp"
+        android:minHeight="5dp"
+        android:maxHeight="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/imageButton"
+        android:layout_toStartOf="@+id/imageButton"
+        android:layout_marginTop="28dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_cats_counter"
+        android:id="@+id/buttonCatsCounter"
+        android:textSize="8dp"
+        android:minHeight="5dp"
+        android:maxHeight="45dp"
+        android:layout_alignTop="@+id/buttonCrowsCounter"
+        android:layout_toRightOf="@+id/imageButton"
+        android:layout_toEndOf="@+id/imageButton" />
 </RelativeLayout>
